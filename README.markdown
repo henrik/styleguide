@@ -10,11 +10,6 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
 # Any language
 
 
-## Prefer obvious code to comments.
-
-Before writing a comment, see if you can rename or extract so the comment is no longer needed.
-
-
 ## Interface comments go outside; implementation comments go inside.
 
 A comment that helps you use the interface goes outside:
@@ -38,6 +33,21 @@ end
 ## Don't check in commented-out code.
 
 Feel free to comment out code in development, but when you push, it's either in or out. You can retrieve it from version control history later if you want it back.
+
+
+## Also:
+
+Before writing a comment, see if you can rename or extract so the comment is no longer needed.
+
+Comments should end with punctuation.
+
+Two spaces before comments at the end of a line to make them more visually separate:
+
+```ruby
+some_code  # Some comment.
+```
+
+Try to keep lines of code to a maximum of around 80 characters for nicer editing in a split editor (and nicer diffs). Lines of text in a README, say, can be longer since your editor should soft-wrap it. I tend to hard-wrap comments, though, because they feel like code.
 
 
 # Ruby
