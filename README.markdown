@@ -241,3 +241,37 @@ But for a one-liner where I don't use the return value, like `foos.each { |x| x.
 ## Avoid `default_scope` in Active Record.
 
 It tends to cause confusing behavior.
+
+
+## Order of things in an Active Record model.
+
+I like things in this order:
+
+```ruby
+class Model < ActiveRecord::Base
+  include Foo
+  extend Bar
+
+  # Start out with anything that changes what it is.
+  acts_as_baz
+
+  # Associations early since they define methods.
+  belongs_to :bar
+  has_one :foo
+
+  # Validations. I think of these as an especially common lifecycle callback.
+  validates :name, presence: true
+
+  # Other lifecycle. In the order that they would run.
+  before_save :this
+  before_destroy :that
+
+  # Class methods before instance methods.
+  def self.class_method
+  end
+
+  def instance_method
+  end
+
+end
+```
