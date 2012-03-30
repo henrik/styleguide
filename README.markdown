@@ -263,7 +263,7 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
 
     For one-liners, brackets are always fine: `foos.each { |x| x.do_it }`.
 
-* Double-quote strings unless the string contains double quotes.
+*   Double-quote strings unless the string contains double quotes.
 
     Single-quoted strings [aren't faster](http://stackoverflow.com/questions/1836467/is-there-a-performance-gain-in-using-single-quotes-vs-double-quotes-in-ruby). Double quotes means you don't need to change them if you add interpolation.
 
@@ -271,11 +271,13 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
 
     `%{this}` is theoretically a better default, since you can include pretty much anything and never need to change the quote type, but it's more work to type and to read.
 
-* In Ruby 1.9 hashes, prefer `{ json: :style }` to `{ :hash => :rockets }` when possible.
+*   Use `%r{}` for regular expressions containing slashes, so you don't have to escape them.
 
-* Prefer `-> { }` stabby lambdas to `lambda {}` or `proc {}`.
+*   In Ruby 1.9 hashes, prefer `{ json: :style }` to `{ :hash => :rockets }` when possible.
 
-* Don't use
+*   Prefer `-> { }` stabby lambdas to `lambda {}` or `proc {}`.
+
+*   Don't use
 
     ```ruby
     class << self
