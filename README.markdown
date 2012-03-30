@@ -299,7 +299,7 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
       # Start out with anything that changes what it is.
       acts_as_baz
 
-      # Associations early since they define methods.
+      # Associations early since you might want to validate them.
       belongs_to :bar
       has_one :foo
 
@@ -309,6 +309,9 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
       # Other lifecycle. In the order that they would run.
       before_save :this
       before_destroy :that
+
+      # Scopes are class method macros, so put them before class methods.
+      scope :slippery, where(slippery: true)
 
       # Class methods before instance methods.
       def self.class_method
