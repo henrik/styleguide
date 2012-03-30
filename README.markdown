@@ -7,6 +7,34 @@ The idea is to question coding style by making it explicit, public and versioned
 Obviously much of this is down to taste, but feel free to [tell me on Twitter](http://twitter.com/henrik) when you disagree and why.
 
 
+# Any language
+
+
+## Prefer obvious code to comments.
+
+Before writing a comment, see if you can rename or extract so the comment is no longer needed.
+
+
+## Interface comments go outside; implementation comments go inside.
+
+A comment that helps you use the interface goes outside:
+
+```ruby
+# Arguments must be so and so.
+def method(x, y)
+end
+```
+
+A comment that relates to implementation, not interface or usage goes inside:
+
+```ruby
+def method(x, y)
+  # We did it this way because of blurk.
+  doing_it_this_way
+end
+```
+
+
 # Ruby
 
 
@@ -75,6 +103,33 @@ Or:
 ```ruby
 foo = value_for(x)
 ```
+
+
+## Make option hash arguments explicit at the top of a method.
+
+Do:
+
+```ruby
+def foo(opts={})
+  x = opts[:x]
+  y = opts[:y]
+  other_stuff
+  x * y
+end
+```
+
+Don't:
+
+```ruby
+def foo(opts={})
+  other_stuff
+  opts[:x] * opts[:y]
+end
+```
+
+When you look at the method, it should be immediately obvious what the option hash arguments are.
+
+If they're still not obvious enough, document the options minimally in a comment.
 
 
 # Ruby on Rails
