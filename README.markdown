@@ -302,6 +302,8 @@ long_text: |
 
 Don't forget the `|` or YAML will fold your newlines.
 
+If parts of your app don't need translation, or not to as many languages, just use multiple `.yml` files. You can send some to translators and run tests against them to ensure they match up, while other parts can be treated differently.
+
 Don't include markup in the translations. Instead, group translation parts under one key to help the translator:
 
 ```yaml
