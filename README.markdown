@@ -141,6 +141,35 @@ When you look at the method, it should be immediately obvious what the option ha
 If they're still not obvious enough, document the options minimally in a comment.
 
 
+## Explicit `nil` branches can be fine.
+
+This is controversial in my team. If you explicitly want a `nil` return value in some situation, I like this:
+
+```ruby
+def example
+  if item
+    item.do_foo
+    item.bar
+  else
+    nil
+  end
+end
+```
+
+Instead of this:
+
+```ruby
+def example
+  if item
+    item.do_foo
+    item.bar
+  end
+end
+```
+
+While it has the same effect, it suggests to me that we don't care about the return value without an item, and that the method just happens to return `nil` as a side effect.
+
+
 # Ruby on Rails
 
 
