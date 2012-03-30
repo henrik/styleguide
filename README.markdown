@@ -102,7 +102,7 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
              two: 2)
     ```
 
-    Also, do any of these:
+*   Also, do any of these:
 
     ```ruby
     foo =
@@ -170,9 +170,9 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
 
 *   Test outside-in. E.g. start with one specification in a request test. Create a route, controller, action and model class only as the test calls for them. When it calls for a model method, create a model unit test and add that method test-first, then go back to the request test when it passes.
 
-*   Prefer request tests to controller and view tests.
+*   Write request tests instead of controller and view tests.
 
-    Do write controller tests if there's enough controller-level code to test that it's worth it.
+*   Do write controller tests if there's enough controller-level code to test that it's worth it.
 
 *   Prefer unit testing some helper, model or presenter to testing variations of a view in a request test.
 
@@ -181,6 +181,8 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
     When you test class X, it's fine to stub a few methods on class Y, but make it a small number of stable methods that are not intimately tied to the Y internals. Instead of stubbing `Y#first_name` and `Y#last_name`, perhaps you should have the interface `Y#name` or even `Y#name?`.
 
     And definitely avoid stubbing something like `y.name.first_name`. [The Law of Demeter](http://en.wikipedia.org/wiki/Law_of_Demeter) is very applicable to mocking and stubbing.
+
+    An interface that makes for less fragile tests is also likely to make for less fragile code.
 
 *   Whenever you stub and mock, make sure there is some other, probably higher-level test that will break if the mocked-out interface changes.
 
@@ -206,7 +208,7 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
     end
     ```
 
-    Don't:
+    Don't do:
 
     ```ruby
     def foo(opts={})
