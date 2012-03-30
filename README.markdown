@@ -110,43 +110,11 @@ end
 It makes the public/private boundary very obvious, and is similar to how `rescue` is indented in a method. But editor autoindentation doesn't tend to use this style, nor the teams I've worked on.
 
 
-## Don't align a block of code after assignment.
-
-Extract to a method or indent once on a new line.
-
-So don't:
-
-```ruby
-foo = case x
-      when 1: y
-      when 2: z
-      end
-```
-
-Do:
-
-```ruby
-foo =
-  case x
-  when 1: y
-  when 2: z
-  end
-```
-
-Or:
-
-```ruby
-foo = value_for(x)
-```
-
-
-## Don't skip indent levels to align arguments or hash keys.
+## Don't skip indent levels for alignment.
 
 Do any of these:
 
 ```ruby
-foo(bar, one: 1, two: 2)
-
 foo(
   bar,
   one: 1,
@@ -167,6 +135,27 @@ But don't do this:
 ```ruby
 foo(bar, one: 1,
          two: 2)
+```
+
+Also, do any of these:
+
+```ruby
+foo =
+  case x
+  when 1: y
+  when 2: z
+  end
+
+foo = value_for(x)
+```
+
+But don't do:
+
+```ruby
+foo = case x
+      when 1: y
+      when 2: z
+      end
 ```
 
 
