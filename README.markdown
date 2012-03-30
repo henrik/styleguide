@@ -1,10 +1,10 @@
 # Styleguides
 
-The idea is to question coding style by making it explicit, public and versioned.
+The idea of this repo is to make my coding style an explicit, considered and versioned thing.
 
-I'm trying to avoid repeating the obvious stuff from other styleguides (two spaces for indentation, ASCII or UTF-8 etc) to instead focus on the less obvious or more contentious.
+It's public in case it interests or helps someone else, and so points can be discussed. Obviously much of this is down to taste, but feel free to [tell me on Twitter](http://twitter.com/henrik) when you disagree and why. Or fork it.
 
-Obviously much of this is down to taste, but feel free to [tell me on Twitter](http://twitter.com/henrik) when you disagree and why. Or fork it.
+I'm trying to avoid repeating the obvious stuff from other styleguides (two spaces for indentation, ASCII or UTF-8 etc) to instead focus on the less obvious or more contentious. I also interpret "style" loosely to include everything from syntax to architecture and process.
 
 
 # Ruby
