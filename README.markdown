@@ -9,6 +9,44 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
 
 # Ruby
 
+
+## Indent `private` like any class method.
+
+Do:
+
+```ruby
+class Example
+
+  def public
+  end
+
+  private
+
+  def private
+  end
+
+end
+```
+
+I used to favor this style:
+
+```ruby
+class Example
+
+  def public
+  end
+
+private
+
+  def private
+  end
+
+end
+```
+
+It makes the public/private boundary very obvious, and is similar to how `rescue` is indented in a method. But editor autoindentation doesn't tend to use this style, nor the teams I've worked on.
+
+
 ## Don't align a block of code after assignment.
 
 Extract to a method or indent once on a new line.
@@ -38,7 +76,9 @@ Or:
 foo = value_for(x)
 ```
 
+
 # Ruby on Rails
+
 
 ## Avoid `default_scope` in Active Record.
 
