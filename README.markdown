@@ -191,6 +191,15 @@ end
 While it has the same effect, it suggests to me that we don't care about the return value without an item, and that the method just happens to return `nil` as a side effect.
 
 
+## `do`/`end` vs. `{}`.
+
+I think I prefer a mix of the two common styles.
+
+I like the Weirich take if it's more than one line: if you use the return value, use braces; otherwise, use `do`/`end`.
+
+But for a one-liner where I don't use the return value, like `foos.each { |x| x.do_it }`, I would use braces.
+
+
 ## Also:
 
 * In Ruby 1.9 hashes, prefer JSON style to hash rockets when possible.
