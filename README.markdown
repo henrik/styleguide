@@ -291,6 +291,17 @@ I use single-quoted symbol keys: `t(:'foo.bar')`. Symbols seem suitable as we sy
 
 Use full keys whenever possible, for easier search: `t(:'foo.bar.baz')` even if lazy lookup would let you do `t(:'.baz')`.
 
+Avoid translated views/files as they're painful to send to translators. You can use translation keys inside views. If you have long texts, try combining `simple_format`, [Markdown](http://daringfireball.net/projects/markdown/) or some custom formatting with block literals:
+
+```yaml
+long_text: |
+  Lorem ipsum dolor sit amet.
+
+  Consectetur adipisicing elit.
+```
+
+Don't forget the `|` or YAML will fold your newlines.
+
 Don't include markup in the translations. Instead, group translation parts under one key to help the translator:
 
 ```yaml
@@ -308,4 +319,4 @@ t(
 )
 ```
 
-Beware of Finnish and other highly inflected languages.
+Beware of Finnish and other highly inflected languages. You can usually make small tweaks to avoid inflection, e.g. "From: Stockholm" instead of "From Stockholm" to avoid the ablative (or elative?) case.
