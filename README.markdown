@@ -254,6 +254,17 @@ In Ruby 1.9 hashes, prefer JSON style to hash rockets when possible.
 
 Prefer `-> { }` stabby lambdas to `lambda {}` or `proc {}`.
 
+Don't use
+
+```ruby
+class << self
+  def foo
+  end
+end
+```
+
+to define class methods when `def self.foo` will do. It makes the method definitions harder to search for.
+
 
 # Ruby on Rails
 
