@@ -230,6 +230,15 @@ I like the Weirich take if it's more than one line: if you use the return value,
 But for a one-liner where I don't use the return value, like `foos.each { |x| x.do_it }`, I would use braces.
 
 
+## Double-quote strings unless the string contains double quotes.
+
+Single quoted strings [aren't faster](http://stackoverflow.com/questions/1836467/is-there-a-performance-gain-in-using-single-quotes-vs-double-quotes-in-ruby). Double quotes means you don't need to change them if you add interpolation.
+
+But don't escape inside a string (or regexp) if you don't need to. Change the quote style instead: `'like "this"'` or `%{'like' "this"}`.
+
+`%{this}` is theoretically a better default, since you can include pretty much anything and never need to change the quote type, but it's more work to type and to read.
+
+
 ## Also:
 
 * In Ruby 1.9 hashes, prefer JSON style to hash rockets when possible.
@@ -275,3 +284,28 @@ class Model < ActiveRecord::Base
 
 end
 ```
+
+## I18n.
+
+I use single-quoted symbol keys: `t(:'foo.bar')`. Symbols seem suitable as we symbolize a lookup key, the quotes are needed if the symbol contains a period. Single quotes look more lightweight than double.
+
+Use full keys whenever possible, for easier search: `t(:'foo.bar.baz')` even if lazy lookup would let you do `t(:'.baz')`.
+
+Don't include markup in the translations. Instead, group translation parts under one key to help the translator:
+
+```yaml
+log_in_or_sign_up:
+  text: "%{log_in} or %{sign_up} to do stuff."
+  log_in: "Log in"
+  sign_up: "Sign up"
+```
+
+```ruby
+t(
+  :'log_in_or_sign_up.text',
+  log_in: link_to(t(:'log_in_or_sign_up.log_in'), login_path),
+  sign_up: link_to(t(:'log_in_or_sign_up.sign_up'), signup_path)
+)
+```
+
+Beware of Finnish and other highly inflected languages.
