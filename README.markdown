@@ -70,7 +70,7 @@ module Mod
 end
 ```
 
-Empty lines around each method so they stand apart. No empty lines between nested modules/classes. No empty line before `include`s/`extend`s as they are in a sense part of the class definition, much like `< Superclass` when you inherit.
+Empty lines around each method so they stand apart. No empty lines between nested modules/classes. No empty line before `include`/`extend` as they are in a sense part of the class definition, much like `< SuperClass` when you inherit.
 
 
 ## Indent `private` like any class method.
@@ -107,7 +107,7 @@ private
 end
 ```
 
-It makes the public/private boundary very obvious, and is similar to how `rescue` is indented in a method. But editor autoindentation doesn't tend to use this style, nor the teams I've worked on.
+It makes the public/private boundary very obvious, and is similar to how `rescue` is indented in a method. But editor autoindentation doesn't tend to support this style, nor the teams I've worked on.
 
 
 ## Don't skip indent levels for alignment.
@@ -183,7 +183,7 @@ end
 
 When you look at the method, it should be immediately obvious what the option hash arguments are.
 
-If they're still not obvious enough, document the options minimally in a comment.
+If they're still not obvious enough, document the options in a comment.
 
 
 ## Explicit `nil` branches can be fine.
@@ -338,4 +338,4 @@ mailers:
         Come get your foo!
 ```
 
-Beware of Finnish and other highly inflected languages. You can usually make small tweaks to avoid inflection, e.g. "From: Stockholm" instead of "From Stockholm" to avoid the ablative (or is it elative?) case.
+Beware of Finnish and other highly inflected languages. You can usually make small tweaks to avoid inflection, e.g. "From: Stockholm" instead of "From Stockholm" to avoid the ablative case.
