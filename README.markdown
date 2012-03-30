@@ -39,10 +39,6 @@ end
 
 Feel free to comment out code in development, but when you push, it's either in or out. You can retrieve it from version control history later if you want it back.
 
-## Also:
-
-* Obvious beats clever.
-
 
 # Ruby
 
