@@ -15,25 +15,31 @@ Extract to a method or indent once on a new line.
 
 So don't:
 
-    foo = case x
-          when 1: y
-          when 2: z
-          end
-
-Do:
-
-    foo =
-      case x
+```ruby
+foo = case x
       when 1: y
       when 2: z
       end
+```
+
+Do:
+
+```ruby
+foo =
+  case x
+  when 1: y
+  when 2: z
+  end
+```
 
 Or:
 
-    foo = value_for(x)
-
+```ruby
+foo = value_for(x)
+```
 
 # Ruby on Rails
 
 ## Avoid `default_scope` in Active Record.
+
 It tends to cause confusing behavior.
