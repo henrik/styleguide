@@ -232,7 +232,7 @@ But for a one-liner where I don't use the return value, like `foos.each { |x| x.
 
 ## Double-quote strings unless the string contains double quotes.
 
-Single quoted strings [aren't faster](http://stackoverflow.com/questions/1836467/is-there-a-performance-gain-in-using-single-quotes-vs-double-quotes-in-ruby). Double quotes means you don't need to change them if you add interpolation.
+Single-quoted strings [aren't faster](http://stackoverflow.com/questions/1836467/is-there-a-performance-gain-in-using-single-quotes-vs-double-quotes-in-ruby). Double quotes means you don't need to change them if you add interpolation.
 
 But don't escape inside a string (or regexp) if you don't need to. Change the quote style instead: `'like "this"'` or `%{'like' "this"}`.
 
