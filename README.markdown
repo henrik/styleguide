@@ -249,9 +249,7 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
 
     While it has the same effect, it suggests to me that we don't care about the return value without an item, and that the method just happens to return `nil` as a side effect.
 
-*   Block style:
-
-    For multiline expressions, use `{}` if you use the return value and `do`/`end` otherwise:
+*   For multiline blocks, use `{}` if you use the return value and `do`/`end` otherwise:
 
     ```ruby
     foos.map { |x|
@@ -269,7 +267,7 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
 
     Single-quoted strings [aren't faster](http://stackoverflow.com/questions/1836467/is-there-a-performance-gain-in-using-single-quotes-vs-double-quotes-in-ruby). Double quotes means you don't need to change them if you add interpolation.
 
-    But don't escape inside a string (or regexp) if you don't need to. Change the quote style instead: `'like "this"'` or `%{'like' "this"}`.
+    But don't escape quotes inside a string if you don't need to. Change the quote style instead: `'like "this"'` or `%{'like' "this"}`.
 
     `%{this}` is theoretically a better default, since you can include pretty much anything and never need to change the quote type, but it's more work to type and to read.
 
@@ -277,7 +275,7 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
 
 *   In Ruby 1.9 hashes, prefer `{ json: :style }` to `{ :hash => :rockets }` when possible.
 
-*   Prefer `-> { }` stabby lambdas to `lambda {}` or `proc {}`.
+*   In Ruby 1.9, prefer `-> { }` stabby lambdas to `lambda {}` or `proc {}`.
 
 *   Don't use
 
@@ -288,7 +286,13 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
     end
     ```
 
-    to define class methods when `def self.foo` will do. It makes the method definitions harder to search for.
+    to define class methods when
+
+    ```ruby
+    def self.foo
+    ```
+
+    will do. It makes the method definitions harder to search for.
 
 * Try to keep lines of code to a maximum of around 80 characters for nicer editing in a split editor (and nicer diffs). Lines of text in a README, say, can be longer since your editor should soft-wrap it. I tend to hard-wrap comments, though, because they feel like code.
 
