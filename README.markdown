@@ -154,13 +154,6 @@ foo(
 )
 
 foo(
-  bar, {
-    one: 1,
-    two: 2
-  }
-)
-
-foo(
   bar,
   {
     one: 1,
@@ -253,7 +246,9 @@ But don't escape inside a string (or regexp) if you don't need to. Change the qu
 
 ## Also:
 
-* In Ruby 1.9 hashes, prefer JSON style to hash rockets when possible.
+In Ruby 1.9 hashes, prefer JSON style to hash rockets when possible.
+
+Prefer `-> { }` stabby lambdas to `lambda {}` or `proc {}`.
 
 
 # Ruby on Rails
