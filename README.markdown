@@ -43,6 +43,36 @@ Feel free to comment out code in development, but when you push, it's either in 
 # Ruby
 
 
+## Empty lines on the class/module level.
+
+I like to use empty lines like so:
+
+```ruby
+module Mod
+  class Example
+    include Foo
+    extend Bar
+
+    acts_as_baz
+
+    def public
+    end
+
+    def another
+    end
+
+    private
+
+    def private
+    end
+
+  end
+end
+```
+
+Empty lines around each method so they stand apart. No empty lines between nested modules/classes. No empty line before `include`s/`extend`s as they are in a sense part of the class definition, much like `< Superclass` when you inherit.
+
+
 ## Indent `private` like any class method.
 
 Do:
