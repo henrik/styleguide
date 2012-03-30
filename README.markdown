@@ -76,6 +76,8 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
 *   Don't skip indent levels for alignment. Do any of these:
 
     ```ruby
+    foo(bar, one: 1, two: 2)
+
     foo(
       bar,
       one: 1,
@@ -162,11 +164,7 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
 
     In practice, I do this less for simple view logic and super-simple methods. Though when I do write tests for super-simple methods, it's not uncommon that they catch a super-simple mistake.
 
-*   Test outside-in.
-
-    E.g. start with one specification in a request test. Create a route, controller, action and model class only as the test calls for them. When it calls for a model method, create a model unit test and add that method test-first, then go back to the request test when it passes.
-
-    When the request test passes, your feature is done.
+*   Test outside-in. E.g. start with one specification in a request test. Create a route, controller, action and model class only as the test calls for them. When it calls for a model method, create a model unit test and add that method test-first, then go back to the request test when it passes.
 
 *   Prefer request tests to controller and view tests.
 
