@@ -25,7 +25,7 @@ def method(x, y)
 end
 ```
 
-A comment that relates to implementation, not interface or usage goes inside:
+A comment that relates to implementation, not interface or usage, goes inside:
 
 ```ruby
 def method(x, y)
