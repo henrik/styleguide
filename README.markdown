@@ -140,28 +140,40 @@ foo = value_for(x)
 ```
 
 
-## Don't align arguments or hash keys further in than one level of indent.
+## Don't skip indent levels to align arguments or hash keys.
 
 Do any of these:
 
 ```ruby
-foo(one: 1, two: 2)
+foo(bar, one: 1, two: 2)
 
 foo(
+  bar,
   one: 1,
   two: 2
 )
+
+foo(
+  bar, {
+    one: 1,
+    two: 2
+  }
+)
+
+foo(
+  bar,
+  {
+    one: 1,
+    two: 2
+  }
+)
 ```
 
-But don't do any of these:
+But don't do this:
 
 ```ruby
-foo(
-  one: 1,
-  two: 2)
-
-foo(one: 1,
-    two: 2)
+foo(bar, one: 1,
+         two: 2)
 ```
 
 
@@ -197,7 +209,7 @@ If they're still not obvious enough, document the options minimally in a comment
 This is controversial in my team. If you explicitly want a `nil` return value in some situation, I like this:
 
 ```ruby
-def example
+def example_reader
   if item
     item.do_foo
     item.bar
@@ -210,7 +222,7 @@ end
 Instead of this:
 
 ```ruby
-def example
+def example_reader
   if item
     item.do_foo
     item.bar
@@ -223,7 +235,7 @@ While it has the same effect, it suggests to me that we don't care about the ret
 
 ## `do`/`end` vs. `{}`.
 
-I think I prefer a mix of the two common styles.
+I prefer a mix of the two common styles.
 
 I like the Weirich take if it's more than one line: if you use the return value, use braces; otherwise, use `do`/`end`.
 
@@ -321,7 +333,7 @@ t(
 )
 ```
 
-I organize keys something like this and try to use the same keys for recurring concepts:
+I organize keys something like this and try to be consistent about things like `controller.action.title`.
 
 ```yaml
 # FoosController
