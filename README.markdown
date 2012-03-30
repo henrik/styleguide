@@ -321,4 +321,25 @@ t(
 )
 ```
 
-Beware of Finnish and other highly inflected languages. You can usually make small tweaks to avoid inflection, e.g. "From: Stockholm" instead of "From Stockholm" to avoid the ablative (or elative?) case.
+I organize keys something like this and try to use the same keys for recurring concepts:
+
+```yaml
+# FoosController
+foos:
+  # action
+  show:
+    title: "Foos"
+  create:
+    success: "Foo created."
+    failure: "Foo could not be created."
+mailers:
+  # FooMailer
+  foo:
+    # action
+    arrived:
+      subject: "Your foo just arrived"
+      body: |
+        Come get your foo!
+```
+
+Beware of Finnish and other highly inflected languages. You can usually make small tweaks to avoid inflection, e.g. "From: Stockholm" instead of "From Stockholm" to avoid the ablative (or is it elative?) case.
