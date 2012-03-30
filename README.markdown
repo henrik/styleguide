@@ -110,6 +110,31 @@ foo = value_for(x)
 ```
 
 
+## Don't align arguments or hash keys further in than one level of indent.
+
+Do any of these:
+
+```ruby
+foo(one: 1, two: 2)
+
+foo(
+  one: 1,
+  two: 2
+)
+```
+
+But don't do any of these:
+
+```ruby
+foo(
+  one: 1,
+  two: 2)
+
+foo(one: 1,
+    two: 2)
+```
+
+
 ## Make option hash arguments explicit at the top of a method.
 
 Do:
@@ -164,6 +189,11 @@ end
 ```
 
 While it has the same effect, it suggests to me that we don't care about the return value without an item, and that the method just happens to return `nil` as a side effect.
+
+
+## Also:
+
+* In Ruby 1.9 hashes, prefer JSON style to hash rockets when possible.
 
 
 # Ruby on Rails
