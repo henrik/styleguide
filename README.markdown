@@ -12,19 +12,19 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
 
 ## Comments
 
-* Avoid them. Before writing a comment, see if you can rename or extract so the comment is no longer needed.
+*   Avoid them. Before writing a comment, see if you can rename or extract so the comment is no longer needed.
 
-* Comments should usually end with punctuation.
+*   Comments should usually end with punctuation.
 
-* Use `# NOTE: Foo.` for especially important comments as Vim (and others?) will highlight it.
+*   Use `# NOTE: Foo.` for especially important comments as Vim (and others?) will highlight it.
 
-* Two spaces before comments at the end of a line to make them more visually separate:
+*   Two spaces before comments at the end of a line to make them more visually separate:
 
     ```ruby
     some_code  # Some comment.
     ```
 
-* A comment that helps you use the interface goes outside:
+*   A comment that helps you use the interface goes outside:
 
     ```ruby
     # Arguments must be so and so.
@@ -32,7 +32,7 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
     end
     ```
 
-* A comment that relates to implementation, not interface or usage, goes inside:
+*   A comment that relates to implementation, not interface or usage, goes inside:
 
     ```ruby
     def method(x, y)
@@ -41,14 +41,14 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
     end
     ```
 
-* Don't check in commented-out code. It tends to become dead, forgotten code. Feel free to comment out code in development, but when you push, it's either in or out. You can retrieve it from version control history later if you want it back.
+*   Don't check in commented-out code. It tends to become dead, forgotten code. Feel free to comment out code in development, but when you push, it's either in or out. You can retrieve it from version control history later if you want it back.
 
-* Similarly, avoid checking in `TODO` and `FIXME` comments unless you're likely to address them soon, or they are likely to become dead and forgotten.
+*   Similarly, avoid checking in `TODO` and `FIXME` comments unless you're likely to address them soon, or they are likely to become dead and forgotten.
 
 
 ## Whitespace
 
-* This is how I like my empty lines at the class/module level:
+*   This is how I like my empty lines at the class/module level:
 
     ```ruby
     module Mod
@@ -75,7 +75,7 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
 
     Empty lines around each method so they stand apart. No empty lines between nested modules/classes. No empty line before `include`/`extend` as they are in a sense part of the class definition, much like `< SuperClass` when you inherit.
 
-* Indent `private` like any class method:
+*   Indent `private` like any class method:
 
     ```ruby
     class Example
@@ -109,7 +109,7 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
 
     It makes the public/private boundary very obvious, and is similar to how `rescue` is indented in a method. But editor autoindentation doesn't tend to support this style, nor the teams I've worked on.
 
-* Don't skip indent levels for alignment. Do any of these:
+*   Don't skip indent levels for alignment. Do any of these:
 
     ```ruby
     foo(
@@ -156,8 +156,42 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
     ```
 
 
+## Testing
+
+*   Work test-first. Don't write a line of code without having a failing test. This is what tests that your test works, and ensures all your code is tested.
+
+    In practice, I do this less for simple view logic and super-simple methods. Though when I do write tests for super-simple methods, it's not uncommon that they catch a super-simple mistake.
+
+*   Test outside-in.
+
+    E.g. start with one specification in a request test. Create a route, controller, action and model class only as the test calls for them. When it calls for a model method, create a model unit test and add that method test-first, then go back to the request test when it passes.
+
+    When the request test passes, your feature is done.
+
+*   Prefer request tests to controller and view tests.
+
+    Do write controller tests if there's enough controller-level code to test that it's worth it.
+
+*   Prefer unit testing some helper, model or presenter to testing variations of a view in a request test.
+
+*   Stubbing and mocking is more acceptable the smaller, more reliable and more shallow the interface is.
+
+    When you test class X, it's fine to stub a few methods on class Y, but make it a small number of stable methods that are not intimately tied to the Y internals. Instead of stubbing `Y#first_name` and `Y#last_name`, perhaps you should have the interface `Y#name` or even `Y#name?`.
+
+    And definitely avoid stubbing something like `y.name.first_name`. [The Law of Demeter](http://en.wikipedia.org/wiki/Law_of_Demeter) is very applicable to mocking and stubbing.
+
+*   Whenever you stub and mock, make sure there is some other, probably higher-level test that will break if the mocked-out interface changes.
+
+
 ## Miscellaneous
 
+* Assignment in a condition is fine without parentheses:
+
+    ```ruby
+    if foo = "bar"
+    ```
+
+    It's a convenient pattern, not hard to tell from an equality check, and your tests will catch it if you mix the two up.
 
 * Make option hash arguments explicit at the top of a method:
 
