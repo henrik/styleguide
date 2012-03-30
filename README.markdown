@@ -10,42 +10,6 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
 # Ruby
 
 
-## Comments
-
-*   Avoid them. Before writing a comment, see if you can rename or extract so the comment is no longer needed.
-
-*   Comments should usually end with punctuation.
-
-*   Use `# NOTE: Foo.` for especially important comments as Vim (and others?) will highlight it.
-
-*   Two spaces before comments at the end of a line to make them more visually separate:
-
-    ```ruby
-    some_code  # Some comment.
-    ```
-
-*   A comment that helps you use the interface goes outside:
-
-    ```ruby
-    # Arguments must be so and so.
-    def method(x, y)
-    end
-    ```
-
-*   A comment that relates to implementation, not interface or usage, goes inside:
-
-    ```ruby
-    def method(x, y)
-      # We did it this way because of blurk.
-      doing_it_this_way
-    end
-    ```
-
-*   Don't check in commented-out code. It tends to become dead, forgotten code. Feel free to comment out code in development, but when you push, it's either in or out. You can retrieve it from version control history later if you want it back.
-
-*   Similarly, avoid checking in `TODO` and `FIXME` comments unless you're likely to address them soon, or they are likely to become dead and forgotten.
-
-
 ## Whitespace
 
 *   This is how I like my empty lines at the class/module level:
@@ -154,6 +118,42 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
           when 2: z
           end
     ```
+
+
+## Comments
+
+*   Avoid them. Before writing a comment, see if you can rename or extract so the comment is no longer needed.
+
+*   Comments should usually end with punctuation.
+
+*   Use `# NOTE: Foo.` for especially important comments as Vim (and others?) will highlight it.
+
+*   Two spaces before comments at the end of a line to make them more visually separate:
+
+    ```ruby
+    some_code  # Some comment.
+    ```
+
+*   A comment that helps you use the interface goes outside:
+
+    ```ruby
+    # Arguments must be so and so.
+    def method(x, y)
+    end
+    ```
+
+*   A comment that relates to implementation, not interface or usage, goes inside:
+
+    ```ruby
+    def method(x, y)
+      # We did it this way because of blurk.
+      doing_it_this_way
+    end
+    ```
+
+*   Don't check in commented-out code. It tends to become dead, forgotten code. Feel free to comment out code in development, but when you push, it's either in or out. You can retrieve it from version control history later if you want it back.
+
+*   Similarly, avoid checking in `TODO` and `FIXME` comments unless you're likely to address them soon, or they are likely to become dead and forgotten.
 
 
 ## Testing
