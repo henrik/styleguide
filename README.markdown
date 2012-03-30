@@ -34,6 +34,8 @@ end
 
 Feel free to comment out code in development, but when you push, it's either in or out. You can retrieve it from version control history later if you want it back.
 
+The same goes for `TODO` and `FIXME` comments. Better to fix before pushing, or it's likely to become just another ignored comment.
+
 
 ## Also:
 
@@ -42,6 +44,9 @@ Before writing a comment, see if you can rename or extract so the comment is no 
 Comments should end with punctuation.
 
 Two spaces before comments at the end of a line to make them more visually separate:
+
+Use `# NOTE: Foo.` for especially important comments as Vim (and others?) will highlight it.
+
 
 ```ruby
 some_code  # Some comment.
@@ -53,7 +58,7 @@ Try to keep lines of code to a maximum of around 80 characters for nicer editing
 # Ruby
 
 
-## Empty lines on the class/module level.
+## Empty lines at the class/module level.
 
 I like to use empty lines like so:
 
