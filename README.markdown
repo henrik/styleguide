@@ -268,7 +268,7 @@ class Model < ActiveRecord::Base
   belongs_to :bar
   has_one :foo
 
-  # Validations. I think of these as an especially common lifecycle callback.
+  # Validations. I think of these as especially common lifecycle callbacks.
   validates :name, presence: true
 
   # Other lifecycle. In the order that they would run.
