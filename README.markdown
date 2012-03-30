@@ -1,4 +1,4 @@
-# Styleguide
+# Style guide
 
 The idea of this repo is to make my coding style an explicit, considered and versioned thing.
 
@@ -6,7 +6,11 @@ I interpret "style" loosely to include a bit of everything from syntax to archit
 
 It's public in case it interests or helps someone else, and so that points can be discussed. Obviously much of this is down to taste, but feel free to [tell me](http://twitter.com/henrik) when you disagree and why. Or fork it.
 
-I'm trying to avoid repeating the established stuff from other styleguides (two spaces for indentation, ASCII or UTF-8 etc) to instead focus on the less obvious or more contentious.
+I'm trying to avoid repeating the established stuff from other style guides (two spaces for indentation, ASCII or UTF-8 etc) to instead focus on the less obvious or more contentious.
+
+## Other style guides
+* [bbatsov's "Ruby Style Guide"](https://github.com/bbatsov/ruby-style-guide)
+* [GitHub's version](https://github.com/styleguide/ruby)
 
 
 # Ruby
