@@ -245,11 +245,21 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
 
     While it has the same effect, it suggests to me that we don't care about the return value without an item, and that the method just happens to return `nil` as a side effect.
 
-* I prefer a mix of the two common block styles.
+*   Block style:
 
-    I like the Weirich take if it's more than one line: if you use the return value, use `{}`; otherwise, use `do`/`end`.
+    For multiline expressions, use `{}` if you use the return value and `do`/`end` otherwise:
 
-    But for a one-liner where I don't use the return value, like `foos.each { |x| x.do_it }`, I would use braces.
+    ```ruby
+    foos.map { |x|
+      x.name
+    }
+
+    foos.each do |x|
+      puts x.name
+    end
+    ```
+
+    For one-liners, brackets are always fine: `foos.each { |x| x.do_it }`.
 
 * Double-quote strings unless the string contains double quotes.
 
@@ -259,7 +269,7 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
 
     `%{this}` is theoretically a better default, since you can include pretty much anything and never need to change the quote type, but it's more work to type and to read.
 
-* In Ruby 1.9 hashes, prefer JSON style to hash rockets when possible.
+* In Ruby 1.9 hashes, prefer `{ json: :style }` to `{ :hash => :rockets }` when possible.
 
 * Prefer `-> { }` stabby lambdas to `lambda {}` or `proc {}`.
 
