@@ -363,7 +363,7 @@ Obviously much of this is down to taste, but feel free to [tell me on Twitter](h
     # FoosController
     foos:
       # action
-      show:
+      index:
         title: "Foos"
       create:
         success: "Foo created."
