@@ -285,7 +285,7 @@ class Model < ActiveRecord::Base
 end
 ```
 
-## I18n.
+## Rails i18n.
 
 I use single-quoted symbol keys: `t(:'foo.bar')`. Symbols seem suitable as we symbolize a lookup key, the quotes are needed if the symbol contains a period. Single quotes look more lightweight than double.
 
