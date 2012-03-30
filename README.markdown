@@ -34,7 +34,7 @@ end
 
 Feel free to comment out code in development, but when you push, it's either in or out. You can retrieve it from version control history later if you want it back.
 
-The same goes for `TODO` and `FIXME` comments. Better to fix before pushing, or it's likely to become just another ignored comment.
+The same goes for `TODO` and `FIXME` comments. Better to fix before pushing or to create a ticket. Otherwise it's likely to become just another forgotten comment.
 
 
 ## Also:
