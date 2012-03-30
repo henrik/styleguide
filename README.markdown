@@ -2,9 +2,11 @@
 
 The idea of this repo is to make my coding style an explicit, considered and versioned thing.
 
+I interpret "style" loosely to include a bit of everything from syntax to architecture and process.
+
 It's public in case it interests or helps someone else, and so that points can be discussed. Obviously much of this is down to taste, but feel free to [tell me](http://twitter.com/henrik) when you disagree and why. Or fork it.
 
-I'm trying to avoid repeating the established stuff from other styleguides (two spaces for indentation, ASCII or UTF-8 etc) to instead focus on the less obvious or more contentious. I also interpret "style" loosely to include a bit of everything from syntax to architecture and process.
+I'm trying to avoid repeating the established stuff from other styleguides (two spaces for indentation, ASCII or UTF-8 etc) to instead focus on the less obvious or more contentious.
 
 
 # Ruby
@@ -120,6 +122,8 @@ I'm trying to avoid repeating the established stuff from other styleguides (two 
           when 2: z
           end
     ```
+
+*   Strip trailing whitespace, including on blank lines. Many programmers will have their editor display invisible characters so they can complain about trailing whitespace.
 
 
 ## Comments
