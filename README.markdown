@@ -298,14 +298,18 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
     will do. It makes the method definitions harder to search for.
 
-* Try to keep lines of code to a maximum of around 80 characters for nicer editing in a split editor (and nicer diffs). Lines of text in a README, say, can be longer since your editor should soft-wrap it. I tend to hard-wrap comments, though, because they feel like code.
+*   Try to keep lines of code to a maximum of around 80 characters for nicer editing in a split editor (and nicer diffs). Lines of text in a README, say, can be longer since your editor should soft-wrap it. I tend to hard-wrap comments, though, because they feel like code.
 
 
 ## Ruby on Rails
 
-* Avoid `default_scope` in Active Record. It tends to cause confusing behavior.
+*   Avoid `default_scope` in Active Record. It tends to cause confusing behavior.
 
-* This is how I like to order things in an Active Record model:
+*   Use `config.action_controller.include_all_helpers = false` so helper methods don't leak all over the place.
+
+    When you do need to share helpers, put them in the helper of a shared superclass controller, or `include` the file in the helper for your current controller.
+
+*   This is how I like to order things in an Active Record model:
 
     ```ruby
     class Model < ActiveRecord::Base
@@ -342,11 +346,11 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 ## Ruby on Rails i18n
 
-* I use single-quoted symbol keys: `t(:'foo.bar')`. Symbols seem suitable as we symbolize a lookup key. The quotes are needed if the symbol contains a period. Single quotes look more lightweight than double.
+*   I use single-quoted symbol keys: `t(:'foo.bar')`. Symbols seem suitable as we symbolize a lookup key. The quotes are needed if the symbol contains a period. Single quotes look more lightweight than double.
 
-* Use full keys whenever possible, for easier search: `t(:'foo.bar.baz')` even if lazy lookup would let you do `t(:'.baz')`.
+*   Use full keys whenever possible, for easier search: `t(:'foo.bar.baz')` even if lazy lookup would let you do `t(:'.baz')`.
 
-* Avoid translated views/files as they're painful to send to translators. You can use translation keys inside views. If you have long texts, try combining `simple_format`, [Markdown](http://daringfireball.net/projects/markdown/) or some custom formatting with block literals:
+*   Avoid translated views/files as they're painful to send to translators. You can use translation keys inside views. If you have long texts, try combining `simple_format`, [Markdown](http://daringfireball.net/projects/markdown/) or some custom formatting with block literals:
 
     ```yaml
     long_text: |
@@ -357,9 +361,9 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
     Don't forget the `|` or YAML will fold your newlines.
 
-* If parts of your app don't need translation, or not to as many languages, just use multiple `.yml` files. You can send some to translators and run tests against them to ensure they match up, while other parts can be treated differently.
+*   If parts of your app don't need translation, or not to as many languages, just use multiple `.yml` files. You can send some to translators and run tests against them to ensure they match up, while other parts can be treated differently.
 
-* Don't include markup in the translations. Instead, group translation parts under one key to help the translator:
+*   Don't include markup in the translations. Instead, group translation parts under one key to help the translator:
 
     ```yaml
     log_in_or_sign_up:
@@ -376,7 +380,7 @@ I'm trying to avoid repeating the established stuff from other style guides (two
     )
     ```
 
-* I organize keys something like this and try to be consistent about things like `controller.action.title`.
+*   I organize keys something like this and try to be consistent about things like `controller.action.title`.
 
     ```yaml
     # FoosController
@@ -397,4 +401,4 @@ I'm trying to avoid repeating the established stuff from other style guides (two
             Come get your foo!
     ```
 
-* Beware Finnish and other highly inflected languages. You can usually make small tweaks to avoid inflection, e.g. "From: Stockholm" instead of "From Stockholm" to avoid the ablative case.
+*   Beware Finnish and other highly inflected languages. You can usually make small tweaks to avoid inflection, e.g. "From: Stockholm" instead of "From Stockholm" to avoid the ablative case.
