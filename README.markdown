@@ -166,6 +166,19 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 *   Similarly, avoid checking in `TODO` and `FIXME` comments unless you're likely to address them soon, or they are likely to become dead and forgotten.
 
 
+## READMEs
+
+*   When possible, do [README driven development](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html). It's like test-first but even higher-level, and forces you to think about your API as a whole before putting cursor to buffer.
+
+*   I like this order:
+
+    1. Intro - sell it
+    2. Usage - how to do it
+    3. Installation
+    4. Gotchas, todos etc
+    5. License
+
+
 ## Testing
 
 *   Work test-first. Don't write a line of code without having a failing test. This is what tests that your test works, and ensures all your code is tested.
