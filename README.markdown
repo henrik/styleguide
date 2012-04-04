@@ -165,6 +165,8 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 *   Similarly, avoid checking in `TODO` and `FIXME` comments unless you're likely to address them soon, or they are likely to become dead and forgotten.
 
+    It can be useful to document known issues, shortcuts taken etc, but a `TODO` or `FIXME` will stand out, possibly even by syntax highlighting. So only use them for very important things that you should notice any time you open that file.
+
 
 ## READMEs
 
