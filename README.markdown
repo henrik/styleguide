@@ -163,9 +163,7 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 *   Don't check in commented-out code. It tends to become dead, forgotten code. Feel free to comment out code in development, but when you push, it's either in or out. You can retrieve it from version control history later if you want it back.
 
-*   Similarly, avoid checking in `TODO` and `FIXME` comments unless you're likely to address them soon, or they are likely to become dead and forgotten.
-
-    It can be useful to document known issues, shortcuts taken etc, but a `TODO` or `FIXME` will stand out, possibly even by syntax highlighting. So only use them for very important things that you should notice any time you open that file.
+*   Similarly, avoid checking in `TODO` and `FIXME` comments unless you're likely to address them soon, or they are likely to become dead and forgotten. Documenting known issues or shortcuts taken can be helpful, but don't pretend you'll do anything about it if you won't.
 
 
 ## READMEs
