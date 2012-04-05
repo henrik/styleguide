@@ -172,8 +172,8 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 *   I like this order:
 
-    1. Intro - sell it
-    2. Usage - how to do it
+    1. Short summary
+    2. Usage
     3. Installation
     4. Gotchas, todos etc
     5. License
