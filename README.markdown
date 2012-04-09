@@ -318,6 +318,8 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 *   Avoid `default_scope` in Active Record. It tends to cause confusing behavior.
 
+*   Don't use SQL outside models. Encapsulate it. Don't do `Item.where(published: true)`; do `Item.published`.
+
 *   Use `config.action_controller.include_all_helpers = false` so helper methods don't leak all over the place.
 
     When you do need to share helpers, put them in the helper of a shared superclass controller, or `include` the file in the helper for your current controller.
