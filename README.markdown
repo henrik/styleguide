@@ -318,6 +318,13 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 ## Ruby on Rails
 
 
+### Controllers
+
+*   Don't cargo cult flash messages. If it's obvious what just happened, don't restate it.
+
+*   Feel free to use the flash for more than copy, such as analytics events and names of partials for complex messages.
+
+
 ### Models/Active Record
 
 *   Avoid `default_scope`. It tends to cause confusing behavior.
