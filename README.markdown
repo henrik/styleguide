@@ -316,13 +316,12 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 ## Ruby on Rails
 
-*   Avoid `default_scope` in Active Record. It tends to cause confusing behavior.
+
+### Models/Active Record
+
+*   Avoid `default_scope`. It tends to cause confusing behavior.
 
 *   Don't use SQL outside models. Encapsulate it. Don't do `Item.where(published: true)`; do `Item.published`.
-
-*   Use `config.action_controller.include_all_helpers = false` so helper methods don't leak all over the place.
-
-    When you do need to share helpers, put them in the helper of a shared superclass controller, or `include` the file in the helper for your current controller.
 
 *   This is how I like to order things in an Active Record model:
 
@@ -359,7 +358,37 @@ I'm trying to avoid repeating the established stuff from other style guides (two
     ```
 
 
-## Ruby on Rails i18n
+### Helpers
+
+*   Use `config.action_controller.include_all_helpers = false` so helper methods don't leak all over the place.
+
+    When you do need to share helpers, put them in the helper of a shared superclass controller, or `include` the file in the helper for your current controller.
+
+
+### Mailers
+
+*   Feel free to use one mailer class per mail action if they're not trivial. This way, you can treat them in a OOP fashion with something like an initializer and private methods.
+
+    ```ruby
+    class OrderCreatedMailer < ApplicationMailer
+
+      def build(order)
+        # …
+      end
+
+      private
+
+      def stuff
+        # …
+      end
+
+    end
+
+    OrderCreatedMailer.build(order).deliver
+    ```
+
+
+### I18n
 
 *   I use single-quoted symbol keys: `t(:'foo.bar')`. Symbols seem suitable as we symbolize a lookup key. The quotes are needed if the symbol contains a period. Single quotes look more lightweight than double.
 
