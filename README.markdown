@@ -307,6 +307,7 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
     ```ruby
     def self.foo
+    end
     ```
 
     will do. It makes the method definitions harder to search for.
@@ -367,7 +368,7 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 ### Mailers
 
-*   Feel free to use one mailer class per mail action if they're not trivial. This way, you can treat them in a OOP fashion with something like an initializer and private methods.
+*   Feel free to use one mailer class per mail action if they're not trivial. This way, you can treat them in an OOP fashion with something like an initializer and private methods.
 
     ```ruby
     class OrderCreatedMailer < ApplicationMailer
