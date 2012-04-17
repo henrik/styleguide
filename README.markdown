@@ -13,6 +13,13 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 * [GitHub's version](https://github.com/styleguide/ruby)
 
 
+# JavaScript
+
+* Prefer CoffeeScript. It's much more fun.
+
+* End statements with semicolons. It's idiomatic and causes less surprises.
+
+
 # Ruby
 
 
