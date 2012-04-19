@@ -13,6 +13,13 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 * [GitHub's version](https://github.com/styleguide/ruby)
 
 
+# HTML
+
+* Always use `alt` attributes for images, but set an empty value (`<img src="foo.jpg" alt="">`) if an image-less version of the site would get by fine without that image.
+
+  So a decorational image should have an empty value. If you have both an image logo and the company name in text, the image logo should probably have an empty value.
+
+
 # JavaScript
 
 * Prefer CoffeeScript. It's much more fun.
