@@ -321,6 +321,18 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 *   Try to keep lines of code to a maximum of around 80 characters for nicer editing in a split editor (and nicer diffs). Lines of text in a README, say, can be longer since your editor should soft-wrap it. I tend to hard-wrap comments, though, because they feel like code.
 
+*   Don't use `begin`/`end` with `rescue` when it spans an entire method. It's more clutter and the cleaner syntax is well-established:
+
+    ```ruby
+    def foo
+      do_stuff
+    rescue
+      bar
+    end
+    ```
+
+    Under consideration: [Exceptional Ruby](http://exceptionalruby.com/) describes `begin`/`rescue` as a code smell and argues that you should extract error handling methods like `with_io_error_handling {}` instead.
+
 
 ## Ruby on Rails
 
