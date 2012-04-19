@@ -331,8 +331,6 @@ I'm trying to avoid repeating the established stuff from other style guides (two
     end
     ```
 
-    Under consideration: [Exceptional Ruby](http://exceptionalruby.com/) describes `begin`/`rescue` as a code smell and argues that you should extract error handling methods like `with_io_error_handling {}` instead.
-
 
 ## Ruby on Rails
 
