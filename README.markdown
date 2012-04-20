@@ -13,6 +13,15 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 * [GitHub's version](https://github.com/styleguide/ruby)
 
 
+# Design
+
+There are of course a ton of principles, but these are some I feel I've learned something from and try to apply in my day to day work.
+
+* DRY: don't repeat yourself. Each piece of knowledge in the system should be in one place and not duplicated. This can be data or domain logic.
+
+* The Law of Demeter. Don't tie one object to the innards of another. Have them interact through public interfaces that are as shallow and as stable as possible.
+
+
 # HTML
 
 * Always use `alt` attributes for images, but set an empty value (`<img src="foo.jpg" alt="">`) if an image-less version of the site would get by fine without that image.
