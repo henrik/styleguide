@@ -184,7 +184,7 @@ There are of course a ton of principles, but these are some I feel I've learned 
 
 *   Don't check in commented-out code. It tends to become dead, forgotten code. Feel free to comment out code in development, but when you push, it's either in or out. You can retrieve it from version control history later if you want it back.
 
-*   Similarly, avoid checking in `TODO` and `FIXME` comments unless you're likely to address them soon, or they are likely to become dead and forgotten. Documenting known issues or shortcuts taken can be helpful, but don't pretend you'll do anything about it if you won't.
+*   Similarly, avoid checking in `TODO` comments unless you're likely to address them soon, or they are likely to become dead and forgotten. I think `FIXME` comments are more likely to stay relevant, assuming they documenting known issues or shortcuts taken.
 
 
 ## READMEs
