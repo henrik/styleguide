@@ -61,18 +61,19 @@ There are of course a ton of principles, but these are some I feel I've learned 
 
         def private
         end
-
       end
     end
     ```
 
-    Empty lines around each method so they stand apart. No empty lines between nested modules/classes. No empty line before `include`/`extend` as they are in a sense part of the class definition, much like `< SuperClass` when you inherit.
+    Avoid empty lines when the indentation level changes (e.g. between the end of the last function and the end of the class). Use empty lines to separate (groups of) things at the same level of indentation.
+
+    This strikes a good balance between compact and readable.
+
 
 *   Indent `private` like any class method:
 
     ```ruby
     class Example
-
       def public
       end
 
@@ -80,7 +81,6 @@ There are of course a ton of principles, but these are some I feel I've learned 
 
       def private
       end
-
     end
     ```
 
@@ -88,7 +88,6 @@ There are of course a ton of principles, but these are some I feel I've learned 
 
     ```ruby
     class Example
-
       def public
       end
 
@@ -96,7 +95,6 @@ There are of course a ton of principles, but these are some I feel I've learned 
 
       def private
       end
-
     end
     ```
 
@@ -394,7 +392,6 @@ There are of course a ton of principles, but these are some I feel I've learned 
 
       def instance_method
       end
-
     end
     ```
 
@@ -412,7 +409,6 @@ There are of course a ton of principles, but these are some I feel I've learned 
 
     ```ruby
     class OrderCreatedMailer < ApplicationMailer
-
       def build(order)
         # …
       end
@@ -422,7 +418,6 @@ There are of course a ton of principles, but these are some I feel I've learned 
       def stuff
         # …
       end
-
     end
 
     OrderCreatedMailer.build(order).deliver
