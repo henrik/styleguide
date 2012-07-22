@@ -423,62 +423,6 @@ There are of course a ton of principles, but these are some I feel I've learned 
     OrderCreatedMailer.build(order).deliver
     ```
 
-
 ### I18n
 
 *   I use single-quoted symbol keys: `t(:'foo.bar')`. Symbols seem suitable as we symbolize a lookup key. The quotes are needed if the symbol contains a period. Single quotes look more lightweight than double.
-
-*   Use full keys whenever possible, for easier search: `t(:'foo.bar.baz')` even if lazy lookup would let you do `t(:'.baz')`.
-
-*   Avoid translated views/files as they're painful to send to translators. You can use translation keys inside views. If you have long texts, try combining `simple_format`, [Markdown](http://daringfireball.net/projects/markdown/) or some custom formatting with block literals:
-
-    ```yaml
-    long_text: |
-      Lorem ipsum dolor sit amet.
-
-      Consectetur adipisicing elit.
-    ```
-
-    Don't forget the `|` or YAML will fold your newlines.
-
-*   If parts of your app don't need translation, or not to as many languages, just use multiple `.yml` files. You can send some to translators and run tests against them to ensure they match up, while other parts can be treated differently.
-
-*   Don't include markup in the translations. Instead, group translation parts under one key to help the translator:
-
-    ```yaml
-    log_in_or_sign_up:
-      text: "%{log_in} or %{sign_up} to do stuff."
-      log_in: "Log in"
-      sign_up: "Sign up"
-    ```
-
-    ```ruby
-    t(
-      :'log_in_or_sign_up.text',
-      log_in: link_to(t(:'log_in_or_sign_up.log_in'), login_path),
-      sign_up: link_to(t(:'log_in_or_sign_up.sign_up'), signup_path)
-    )
-    ```
-
-*   I organize keys something like this and try to be consistent about things like `controller.action.title`.
-
-    ```yaml
-    # FoosController
-    foos:
-      # action
-      index:
-        title: "Foos"
-      create:
-        success: "Foo created."
-        failure: "Foo could not be created."
-    mailers:
-      # FooMailer
-      foo:
-        # action
-        arrived:
-          subject: "Your foo just arrived"
-          body: |
-            Come get your foo!
-    ```
-
-*   Beware Finnish and other highly inflected languages. You can usually make small tweaks to avoid inflection, e.g. "From: Stockholm" instead of "From Stockholm" to avoid the ablative case.
