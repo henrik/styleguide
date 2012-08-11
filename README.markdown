@@ -29,6 +29,15 @@ There are of course a ton of principles, but these are some I feel I've learned 
   So a decorational image should have an empty value. If you have both an image logo and the company name in text, the image logo should probably have an empty value.
 
 
+# CSS
+
+* Attempt to capture the intent of a style in the selector. Prefer e.g. `.user_name` to `.user > p > span`.
+
+  Makes things more maintainable and readable.
+
+  Further reading: ["Shoot to kill; CSS selector intent" by Harry Roberts (@csswizardry)](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/)
+
+
 # JavaScript
 
 * Prefer CoffeeScript. It's much more fun.
