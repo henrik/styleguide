@@ -58,7 +58,7 @@ There are of course a ton of principles, but these are some I feel I've learned 
         two = 2;
     ```
 
-    Further reading: [Blog post by Ben Alman](http://benalman.com/news/2012/05/multiple-var-statements-javascript/)
+    Further reading: ["Multiple var statements in JavaScript, not superfluous" by Ben Alman](http://benalman.com/news/2012/05/multiple-var-statements-javascript/)
 
 
 # Ruby
