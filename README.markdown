@@ -35,6 +35,22 @@ There are of course a ton of principles, but these are some I feel I've learned 
 
 * End statements with semicolons. It's idiomatic and causes less surprises.
 
+*   Separate `var` statements are easier to maintain. Do this:
+
+    ```js
+    var one = 1;
+    var two = 2;
+    ```
+
+    Don't do some version of:
+
+    ```js
+    var one = 1,
+        two = 2;
+    ```
+
+    Further reading: [Blog post by Ben Alman](http://benalman.com/news/2012/05/multiple-var-statements-javascript/)
+
 
 # Ruby
 
