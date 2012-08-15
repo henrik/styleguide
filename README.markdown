@@ -17,9 +17,9 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 There are of course a ton of principles, but these are some I feel I've learned something from and try to apply in my day to day work.
 
-* DRY: don't repeat yourself. Each piece of knowledge in the system should be in one place and not duplicated. This can be data or domain logic.
+* **DRY: don't repeat yourself.** Each piece of knowledge in the system should be in one place and not duplicated. This can be data or domain logic. Not duplicating data/domain logic is *important* DRY and imperative. Not typing the same markup or code construct twice is less important DRY: sometimes duplication is more readable and maintainable than abstraction.
 
-* The Law of Demeter. Don't tie one object to the innards of another. Have them interact through public interfaces that are as shallow and as stable as possible.
+* **The Law of Demeter.** Don't tie one object to the innards of another. Have them interact through public interfaces that are as shallow and as stable as possible.
 
 
 # HTML
