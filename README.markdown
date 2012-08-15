@@ -240,6 +240,8 @@ There are of course a ton of principles, but these are some I feel I've learned 
       4. Gotchas, todos etc
       5. License
 
+    Putting usage before installation instruction is probably sensible because installation is do-once, rarely checked again, and you will probably want to know how the library is used before you install it anyway.
+
 
 ## Testing
 
