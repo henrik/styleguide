@@ -231,7 +231,7 @@ I'm trying to avoid repeating the established stuff from other style guides (two
       4. Gotchas, todos etc
       5. License
 
-    Putting usage before installation instruction is probably sensible because installation is do-once, rarely checked again, and you will probably want to know how the library is used before you install it anyway.
+  Putting usage before installation instruction is probably sensible because installation is do-once, rarely checked again, and you will probably want to know how the library is used before you install it anyway.
 
 
 ## Miscellaneous
