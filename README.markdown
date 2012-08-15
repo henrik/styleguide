@@ -173,6 +173,22 @@ There are of course a ton of principles, but these are some I feel I've learned 
           end
     ```
 
+*   This is how I like my whitespace in some common constructs:
+
+    ``` ruby
+    array = [1, 2, 3]
+    hash = { key: "value" }
+    block { |arg1, arg2| arg * arg2 }
+    ```
+
+    This is just down to taste and convention; there's no particular rationale.
+
+    Except for with nested arrays, where I think extra spaces make it more readable:
+
+    ``` ruby
+    nested_array = [ [1, 2, 3], [4, 5, 6] ]  # If on a single line.
+    ```
+
 *   Strip trailing whitespace, including on blank lines. Many programmers will have their editor display invisible characters so they can complain about trailing whitespace.
 
 
