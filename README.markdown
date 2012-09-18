@@ -21,30 +21,46 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 # Haml
 
-*   Blank lines around expressions if their content is more than one line:
+*   Blank lines around expressions if their content is more than one line, and logically group content:
 
     ```haml
     - if foo
 
       %p bar
 
-      %p baz
+      .baz
+        %p one
+        %p two
 
     - else
 
       %p boink
     ```
 
-    Not:
+    No blank lines at all is fine if there's not enough content to group it:
+
+    ```haml
+    - if foo
+      %p bar
+      %p baz
+    - else
+      %p boink
+    ```
+
+    Just avoid things like this:
 
     ```haml
     - if foo
       %p bar
 
-      %p baz
+      .baz
+        %p one
+        %p two
     - else
       %p boink
     ```
+
+    This is all about visual grouping (Gestalt law of proximity).
 
 
 # CSS
