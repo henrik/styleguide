@@ -19,6 +19,33 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
   So a decorational image should have an empty value. If you have both an image logo and the company name in text, the image logo should probably have an empty value.
 
+# Haml
+
+*   Blank lines around expressions if their content is more than one line:
+
+    ```haml
+    - if foo
+
+      %p bar
+
+      %p baz
+
+    - else
+
+      %p boink
+    ```
+
+    Not:
+
+    ```haml
+    - if foo
+      %p bar
+
+      %p baz
+    - else
+      %p boink
+    ```
+
 
 # CSS
 
