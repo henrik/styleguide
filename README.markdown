@@ -223,6 +223,19 @@ I'm trying to avoid repeating the established stuff from other style guides (two
     nested_array = [ [1, 2, 3], [4, 5, 6] ]  # If on a single line.
     ```
 
+*   Try to keep lines of code to a maximum of around 80 characters for nicer editing in a split editor (and nicer diffs). Lines of text in a README, say, can be longer since your editor should soft-wrap it. I tend to hard-wrap comments, though, because they feel like code.
+
+*   Break lines sooner if it helps readability, e.g.:
+
+    ``` ruby
+    delegate :foo, :bar, :baz,
+      to: :boink
+
+    has_many :foos,
+      through: :bars,
+      uniq: true
+    ```
+
 *   Strip trailing whitespace, including on blank lines. Many programmers will have their editor display invisible characters so they can complain about trailing whitespace.
 
 
@@ -384,8 +397,6 @@ I'm trying to avoid repeating the established stuff from other style guides (two
     ```
 
     will do. It makes the method definitions harder to search for.
-
-*   Try to keep lines of code to a maximum of around 80 characters for nicer editing in a split editor (and nicer diffs). Lines of text in a README, say, can be longer since your editor should soft-wrap it. I tend to hard-wrap comments, though, because they feel like code.
 
 *   Don't use `begin`/`end` with `rescue` when it spans an entire method. It's more clutter and the cleaner syntax is well-established:
 
