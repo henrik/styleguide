@@ -435,18 +435,20 @@ I'm trying to avoid repeating the established stuff from other style guides (two
       # Start out with anything that changes what it is.
       acts_as_baz
 
-      # Associations early since you might want to validate them.
-      belongs_to :bar
-      has_one :foo
-
       # Validations. I think of these as especially common lifecycle callbacks.
       validates :name, presence: true
 
-      # Other lifecycle. In the order that they would run.
-      before_save :this
-      before_destroy :that
+      # Other lifecycle. In the order that they would run. Create before edit.
+      before_save :one
+      before_create :two
+      before_update :three
+      before_destroy :four
 
-      # Scopes are class method macros, so put them before class methods.
+      # Associations effectively define instance methods.
+      belongs_to :bar
+      has_one :foo
+
+      # Scopes effectively define class methods.
       scope :slippery, where(slippery: true)
 
       # Class methods before instance methods.
