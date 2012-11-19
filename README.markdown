@@ -241,7 +241,11 @@ I'm trying to avoid repeating the established stuff from other style guides (two
 
 ## Comments
 
-*   Avoid them. Before writing a comment, see if you can rename or extract so the comment is no longer needed.
+*   Avoid them if you can rename or extract so the comment is no longer needed.
+
+    Embrace them when they add context, describe gotchas or help the future developer in other ways.
+
+    Further reading: ["The War on Comments" by David Bryant Copeland](http://www.naildrivin5.com/blog/2012/01/11/the-war-on-comments.html)
 
 *   Comments should usually end with punctuation.
 
