@@ -412,6 +412,37 @@ I'm trying to avoid repeating the established stuff from other style guides (two
     end
     ```
 
+*   Prefer `class Foo; class Bar` to `class Foo::Bar` because of constant lookup issues.
+
+    The latter version has unexpected constant lookup that can lead to bugs.
+
+    ```ruby
+    X = "root x"
+
+    class Foo
+      X = "foo x"
+    end
+
+    class Foo::Bar
+      puts X
+    end
+
+    class Foo
+      class Bar
+        puts X
+      end
+    end
+    ```
+
+    outputs:
+
+    ```
+    root x
+    foo x
+    ```
+
+    Further reading: ["Everything you ever wanted to know about constant lookup in Ruby" by Conrad Irwin](http://cirw.in/blog/constant-lookup.html)
+
 
 ## Ruby on Rails
 
