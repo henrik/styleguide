@@ -412,7 +412,7 @@ I'm trying to avoid repeating the established stuff from other style guides (two
     end
     ```
 
-*   <a name="#constant-lookup"/>Prefer `class Foo; class Bar` to `class Foo::Bar` because of constant lookup issues.
+*   <a name="constant-lookup"/>Prefer `class Foo; class Bar` to `class Foo::Bar` because of constant lookup issues.
 
     The latter version has unexpected constant lookup that can lead to bugs.
 
