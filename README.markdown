@@ -423,22 +423,22 @@ I'm trying to avoid repeating the established stuff from other style guides (two
       X = "foo x"
     end
 
-    class Foo::Bar
-      puts X
-    end
-
     class Foo
       class Bar
         puts X
       end
+    end
+
+    class Foo::Bar
+      puts X
     end
     ```
 
     outputs:
 
     ```
-    root x
     foo x
+    root x
     ```
 
     Further reading: ["Everything you ever wanted to know about constant lookup in Ruby" by Conrad Irwin](http://cirw.in/blog/constant-lookup.html)
