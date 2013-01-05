@@ -8,6 +8,8 @@ It's public in case it interests or helps someone else, and so that points can b
 
 I'm trying to avoid repeating the established stuff from other style guides (two spaces for indentation, ASCII or UTF-8 etc) to instead focus on the less obvious or more contentious.
 
+Also see [the styleguide of my team](https://github.com/barsoom/devbook/tree/master/styleguide) which may be more up to date.
+
 ## Other style guides
 * [bbatsov's "Ruby Style Guide"](https://github.com/bbatsov/ruby-style-guide)
 * [GitHub's version](https://github.com/styleguide/ruby)
