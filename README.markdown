@@ -532,10 +532,6 @@ Also see [the styleguide of my team](https://github.com/barsoom/devbook/tree/mas
     OrderCreatedMailer.build(order).deliver
     ```
 
-### I18n
-
-*   I use single-quoted symbol keys: `t(:'foo.bar')`. Symbols seem suitable as we symbolize a lookup key. The quotes are needed if the symbol contains a period. Single quotes look more lightweight than double.
-
 
 # Design
 
