@@ -298,6 +298,12 @@ Also see [the styleguide of my team](https://github.com/barsoom/devbook/tree/mas
 
 ## Miscellaneous
 
+* Prefer `Hash#fetch` to `Hash#[]`.
+
+  Without a default value if you expect the hash to always have a key.
+
+  With a default value (even if it's `nil`) when fallback is acceptable.
+
 * Assignment in a condition is fine without parentheses:
 
     ```ruby
@@ -310,8 +316,9 @@ Also see [the styleguide of my team](https://github.com/barsoom/devbook/tree/mas
 
     ```ruby
     def foo(opts = {})
-      x = opts[:x]
-      y = opts[:y]
+      x = opts.fetch(:x, 1)
+      y = opts.fetch(:y, 2)
+
       other_stuff
       x * y
     end
@@ -322,11 +329,11 @@ Also see [the styleguide of my team](https://github.com/barsoom/devbook/tree/mas
     ```ruby
     def foo(opts = {})
       other_stuff
-      opts[:x] * opts[:y]
+      opts.fetch(:x, 1) * opts.fetch(:y, 2)
     end
     ```
 
-    When you look at the method, it should be immediately obvious what the option hash arguments are.
+    Hash arguments *are* arguments. It should be obvious what arguments a method takes.
 
     If they're still not obvious enough, document the options in a comment.
 
