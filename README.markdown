@@ -309,7 +309,7 @@ Also see [the styleguide of my team](https://github.com/barsoom/devbook/tree/mas
 * Make option hash arguments explicit at the top of a method:
 
     ```ruby
-    def foo(opts={})
+    def foo(opts = {})
       x = opts[:x]
       y = opts[:y]
       other_stuff
@@ -320,7 +320,7 @@ Also see [the styleguide of my team](https://github.com/barsoom/devbook/tree/mas
     Don't do:
 
     ```ruby
-    def foo(opts={})
+    def foo(opts = {})
       other_stuff
       opts[:x] * opts[:y]
     end
